@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protons Maganen</title>
+    <style>
+        body {
+            background-color: #18181b;
+            color: #f4f4f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 550px;
+            background-color: #18181b;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .page {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page.active {
+            display: flex;
+        }
+        h2 {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #f4f4f5;
+            white-space: pre-line;
+        }
+        .btn {
+            background-color: #3f3f46;
+            color: #f4f4f5;
+            border: none;
+            padding: 12px 25px;
+            margin: 8px 0;
+            width: 100%;
+            max-width: 320px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: #52525b;
+        }
+        img.profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .description {
+            font-size: 14px;
+            color: #e4e4e7;
+            line-height: 1.8;
+            margin: 15px 0 25px 0;
+            white-space: pre-line;
+            background: #27272a;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: right;
+        }
+        .warning {
+            font-size: 12px;
+            color: #a1a1aa;
+            margin-top: 30px;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+        .error-img {
+            color: #f87171;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<!--Main-->
+    <div id="MainPage" class="page active">
+        <img src="protons.jpg" alt="Protons Logo" style="width: 120px; margin-bottom: 20px;">
+        <h2>اختار واحد من بروتونز عايز تستفسر عنه <br>وتشوف ايه مهمته في الحياة لو كان مهم اصلا</h2>
+        
+        <button class="btn" onclick="openPage('AmrPage', 'amr_song.mp3')">عمرو العدوي (الاسطوره)</button>
+        <button class="btn" onclick="openPage('AhmedPage', 'ahmed_song.mp3')">أحمد (الوزير)</button>
+        <button class="btn" onclick="openPage('RetagPage', 'retag_song.mp3')">ريتاج (النائبة)</button>
+        <button class="btn" onclick="openPage('YoussefPage', 'youssef_song.mp3')">يوسف (الصيني)</button>
+
+        <div class="warning">تحذير !! هذا الكلام لا يمت للواقع بصله . <br> واي شيء قد يتشابه بينه وبين الواقع فهو من محض الصدفه</div>
+    </div>
+<!--Amr 2lzamalkawy-->
+    <div id="AmrPage" class="page">
+        <img src="amr.jpg" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="error-img" style="display:none;">[الصورة غير موجودة]</div>
+        <div class="description">اسم الكائن: عمرو (الأسطوره)
+
+الوصف:
+اسمه الحقيقي عمرو الاسطوره الكارف الرايق اللي
+مفيش منه اتنين اللي بينفخ في الحجر بيقسمه نصين.
+اغنيته الرسميه كل البنات بتحبك كل البنات حلوين.
+هو فعليا القائد الاعلى للرجوله والجدعنه.
+و في مره شوفته شايل طيارة وبيرميها في الهواء
+عشان قطه كانت وقعها تحتيها.كمان هو اسطوره من اساطير الزمالك و كل ما شيكابالا يشوفه
+يقوله مش مصدق اني شفتك يا عمرو يأسطوره ينفع صوره؟
+كمان عمرو والجيار نبر ون مفيهاش اختلاف.
+'وبس عشان منخشش النار من الكدب'</div>
+        <button class="btn" onclick="goHome()">رجوع للقائمة الرئيسية</button>
+    </div>
+
+    <!-- صفحة أحمد -->
+    <div id="AhmedPage" class="page">
+        <img src="ahmed.jpg" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="error-img" style="display:none;">[الصورة غير موجودة]</div>
+        <div class="description">اسم الكائن: أحمد (الوزير)
+
+الوصف:
+واحد مبيعرفش يسوق رابيت ودايس 12 بني ادم لحد دلوقتي.
+منصبه وزير الترفيه، وعنده نائبة بتصدق كلامه في كل حاجة.
+الكون كله في اربع وزراء وزير الداخليه و وزير الوزراعه ووزير النقل وأحمد الوزير
+كل ما حد يقوله كفاية قروض يقوله لو انا مش عارف شغلي مش هقف الوقفه دي . 
+قدوته في الحياة احمد عز .</div>
+        <button class="btn" onclick="goHome()">رجوع للقائمة الرئيسية</button>
+    </div>
+
+<!--Retag-->
+    <div id="RetagPage" class="page">
+        <img src="retag.jpg" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="error-img" style="display:none;">[الصورة غير موجودة]</div>
+        <div class="description">اسم الكائن: ريتاج(النائبة)
+:الوصف
+شغاله نائبه لوزير الترفيه لكن بتحب متسمعش كلامه
+الغريب انها دايما بتطبلو
+عندها نسبة انفصال في الشخصيه فمتسألهاش اي سؤال بعد اتناشر بليل
+مصاحبه واحده اسمها منه مش منة او منى 
+نفسها تبقا استرونج اندبندنت وومن بس مش عارفه
+عمرها محدش يعرفو لحد دلوقتي في اشاعات بتقول انها حضرت الفراعنه وضربت فرعون على دماغه</div>
+        <button class="btn" onclick="goHome()">رجوع للقائمة الرئيسية</button>
+    </div>
+
+<!--Youssef-->
+    <div id="YoussefPage" class="page">
+        <img src="youssef.jpg" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="error-img" style="display:none;">[الصورة غير موجودة]</div>
+        <div class="description">اسم الكائن: يوسف(صيني)
+الوصف:
+محتل شيوعي بيظهر بعد الساعه واحده بليل
+متردش عليه عشان هياخدك الباكرومز
+لو عايز تهرب منه ناديله وزير الترفيه
+بيحب يبعت استيكرات لجنا و جنا حبى وهتيجي تمسكو من شعره وتدوس عليه زي السجاده
+واياك ثم اياك تحكي لحد عنه عشان هيبدء يطلعلك في الاحلام
+*للمعلومه بندورله على دكتور يعالجه اللي عنده رقم دكتور كويس يكلمنا*</div>
+        <button class="btn" onclick="goHome()">رجوع للقائمة الرئيسية</button>
+    </div>
+
+</div>
+
+<script>
+    let currentAudio = null;
+
+    function stopSongs() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentAudio = null;
+        }
+    }
+
+    function playSong(filename) {
+        stopSongs();
+        currentAudio = new Audio(filename);
+        currentAudio.play().catch(error => {
+            console.log("تعذر تشغيل الصوت:", error);
+        });
+    }
+
+    function openPage(pageId, songFilename) {
+        playSong(songFilename);
+        
+        // إخفاء كل الصفحات
+        let pages = document.querySelectorAll('.page');
+        pages.forEach(p => p.classList.remove('active'));
+        
+        // إظهار الصفحة المطلوبة
+        document.getElementById(pageId).classList.add('active');
+    }
+
+    function goHome() {
+        stopSongs();
+        
+        let pages = document.querySelectorAll('.page');
+        pages.forEach(p => p.classList.remove('active'));
+        
+        document.getElementById('MainPage').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
